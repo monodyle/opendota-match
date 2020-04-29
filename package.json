@@ -1,6 +1,6 @@
 {
   "name": "opendota-match",
-  "description": "OpenDota Match detail and static",
+  "description": "OpenDota Match details and statistics",
   "version": "0.0.1",
   "scripts": {
     "dev": "next",
