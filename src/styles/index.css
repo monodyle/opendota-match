@@ -54,3 +54,14 @@ body {
 .btn-shadow:hover {
   box-shadow: 0 0 4em -0.5em rgba(199, 47, 83, 0.64), 0 0 2em rgba(199, 47, 83, 0.36);
 }
+
+.match-banpick .bans .hero img {
+  filter: grayscale(100%)
+}
+
+/* .player .hero-avatar::before {
+  content: " ";
+  @apply absolute block w-1 h-full bg-red;
+  top: 0;
+  left: 0;
+} */

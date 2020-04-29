@@ -1,5 +1,6 @@
 import MatchInfo from './partials/matchinfo'
 import BanPick from './partials/banpick'
+import Teams from './partials/teams'
 
 const Match = ({ data }) => {
   const {
@@ -59,7 +60,10 @@ const Match = ({ data }) => {
         game_mode={game_mode}
         duration={duration}
       />
-      <BanPick picks_bans={picks_bans} />
+      <div className='h-10'></div>
+      <BanPick picks_bans={picks_bans} radiant_team={radiant_team} dire_team={dire_team} />
+      <div className='h-10'></div>
+      <Teams players={players} />
     </div>
   )
 }

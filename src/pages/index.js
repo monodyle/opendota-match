@@ -19,7 +19,7 @@ const Home = ({ match_data }) => {
         style={{ minHeight: '40vh' }}
       >
         <Match data={match_data} />
-        <div className='absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'>
+        <div className='relative mt-10 transform -translate-x-1/2 left-1/2'>
           <div className='container flex items-center justify-center'>
             <input
               type='text'

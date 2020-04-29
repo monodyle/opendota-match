@@ -2,7 +2,7 @@ const game_modes = ['', 'All Pick', 'Captions Mode']
 
 const MatchInfo = ({ radiant_name, dire_name, radiant_score, dire_score, game_mode, duration }) => {
   return (
-    <div className='matchInfo'>
+    <div className='match-info'>
       <div className='flex items-end justify-center'>
         <div className='flex items-center justify-end team-radiant'>
           <div className='font-bold team-name'>{radiant_name}</div>
