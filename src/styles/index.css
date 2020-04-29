@@ -1,0 +1,56 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam:ital,wght@0,400;0,600;1,400&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+.anti-select {
+  user-select: none;
+}
+
+body {
+  @apply relative font-serif text-white bg-black;
+  background-image: url("/assets/images/other_features_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: top center;
+}
+
+.logo::before {
+  content: "";
+  @apply block;
+  @apply absolute;
+  top: calc(50% - 1.6em);
+  left: calc(50% - 1em);
+  background-color: rgba(199, 47, 83, 0.64);
+  filter: blur(1px);
+  box-shadow: 0 0 3.2em rgba(255, 255, 255, 0.64),
+  0 0 3em rgba(199, 47, 83, 0.72), 0 0 1em rgba(199, 47, 83, 1);
+  opacity: 0;
+  transition: opacity 0.24s ease-in;
+  @apply w-8 h-8 rounded-full opacity-0;
+}
+
+.logo:hover::before {
+  @apply opacity-100;
+}
+
+.btn-shadow {
+  box-shadow: 0 0 2em rgba(199, 47, 83, 0.64);
+  transition: box-shadow 0.12s ease-in;
+}
+
+.btn-shadow:hover {
+  box-shadow: 0 0 4em -0.5em rgba(199, 47, 83, 0.64), 0 0 2em rgba(199, 47, 83, 0.36);
+}
