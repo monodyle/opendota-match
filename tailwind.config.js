@@ -24,6 +24,9 @@ module.exports = {
       'light-green': '#e6ffed',
       'mid-green': '#acf2bd',
       yellow: '#F7AC2A',
+
+      radiant: '#6dc200',
+      dire: '#c33334'
     },
     fontFamily: {
       mono: ['"Roboto Mono"', '"SF Mono"', 'monospace'],

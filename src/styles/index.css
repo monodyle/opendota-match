@@ -290,3 +290,7 @@ body {
 .tower.team-dire.tier-rack {
   background-position: 56%;
 }
+
+.highcharts-root .highcharts-credits {
+  display: none
+}

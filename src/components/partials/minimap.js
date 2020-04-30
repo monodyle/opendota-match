@@ -37,6 +37,13 @@ const Minimap = ({ players }) => {
           }}
         ></span>
       ))}
+      <span
+        className='absolute top-0 bottom-0 left-0 right-0 z-10 block'
+        style={{
+          backgroundImage:
+            'url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)',
+        }}
+      ></span>
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import MatchInfo from './partials/matchinfo'
 import BanPick from './partials/banpick'
 import Teams from './partials/teams'
-import Minimap from './partials/minimap'
+import Statistics from './partials/statistics'
 
 const Match = ({ data }) => {
   const {
@@ -60,13 +60,18 @@ const Match = ({ data }) => {
         dire_score={dire_score}
         game_mode={game_mode}
         duration={duration}
+        radiant_win={radiant_win}
       />
       <div className='h-10'></div>
       <BanPick picks_bans={picks_bans} radiant_team={radiant_team} dire_team={dire_team} />
       <div className='h-10'></div>
-      <div className="flex">
-        <Minimap players={players}  />
-      </div>
+      <Statistics
+        players={players}
+        radiant_gold_adv={radiant_gold_adv}
+        radiant_xp_adv={radiant_xp_adv}
+        radiant_team={radiant_team}
+        dire_team={dire_team}
+      />
       <div className='h-10'></div>
       <Teams players={players} radiant_tag={radiant_team.tag} dire_tag={dire_team.tag} />
     </div>
