@@ -1,5 +1,5 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam:ital,wght@0,400;0,600;1,400&display=swap"); */
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -21,22 +21,22 @@ a {
 
 body {
   @apply relative font-serif text-white bg-black;
-  background-image: url("/assets/images/other_features_bg.jpg");
+  background-image: url('/assets/images/other_features_bg.jpg');
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: top center;
 }
 
 .logo::before {
-  content: "";
+  content: '';
   @apply block;
   @apply absolute;
   top: calc(50% - 1.6em);
   left: calc(50% - 1em);
   background-color: rgba(199, 47, 83, 0.64);
   filter: blur(1px);
-  box-shadow: 0 0 3.2em rgba(255, 255, 255, 0.64),
-  0 0 3em rgba(199, 47, 83, 0.72), 0 0 1em rgba(199, 47, 83, 1);
+  box-shadow: 0 0 3.2em rgba(255, 255, 255, 0.64), 0 0 3em rgba(199, 47, 83, 0.72),
+    0 0 1em rgba(199, 47, 83, 1);
   opacity: 0;
   transition: opacity 0.24s ease-in;
   @apply w-8 h-8 rounded-full opacity-0;
@@ -56,12 +56,237 @@ body {
 }
 
 .match-banpick .bans .hero img {
-  filter: grayscale(100%)
+  filter: grayscale(100%);
 }
 
-/* .player .hero-avatar::before {
-  content: " ";
-  @apply absolute block w-1 h-full bg-red;
-  top: 0;
-  left: 0;
-} */
+.minimap-icon::before {
+  content: ' ';
+  display: block;
+  width: 100%;
+  padding-top: 100%;
+}
+
+/* Radiant */
+.minimap-icon.team-radiant {
+  left: 6%;
+  bottom: 8%;
+}
+
+.team-radiant.lane-1.role-1 {
+  left: 76%;
+  bottom: 8%;
+}
+
+.team-radiant.lane-1.role-1 ~ .lane-1.role-1 {
+  left: calc(76% - 1em);
+}
+
+.team-radiant.lane-2.role-2 {
+  left: 36%;
+  bottom: 37%;
+}
+
+.team-radiant.lane-3.role-3 {
+  left: 7.2%;
+  top: 36%;
+  bottom: unset;
+}
+
+.team-radiant.lane-3.role-3 ~ .lane-3.role-3 {
+  top: calc(36% - 1em);
+  bottom: unset;
+}
+
+/* Dire */
+.minimap-icon.team-dire {
+  top: 8%;
+  right: 7%;
+}
+
+.team-dire.lane-3.role-1 {
+  right: calc(74% - 1em);
+  top: 8%;
+}
+
+.team-dire.lane-3.role-1 ~ .lane-3.role-1 {
+  right: 74%;
+}
+
+.team-dire.lane-2.role-2 {
+  right: 40%;
+  top: 40%;
+}
+
+.team-dire.lane-1.role-3 {
+  right: 7.2%;
+  bottom: 32%;
+  top: unset;
+}
+
+.team-dire.lane-1.role-3 ~ .lane-1.role-3 {
+  bottom: calc(32% + 1em);
+  top: unset;
+}
+
+/* Tower */
+.tower {
+  background-image: url('/assets/icons/tower.png');
+  background-size: auto 16px;
+}
+
+.tower.team-radiant.lane-mid {
+  background-position: 79%;
+}
+.tower.team-radiant.lane-mid.tier-1 {
+  bottom: 38.9%;
+  left: 37%;
+}
+.tower.team-radiant.lane-mid.tier-2 {
+  bottom: 30.4%;
+  left: 26.3%;
+}
+.tower.team-radiant.lane-mid.tier-3 {
+  bottom: 22.2%;
+  left: 18.2%;
+}
+.tower.team-radiant.lane-mid.tier-rack {
+  bottom: 22%;
+  left: 15.8%;
+  transform: rotate(-45deg);
+}
+.tower.team-radiant.lane-mid.tier-rack + .tier-rack {
+  transform: translate(0.35em, 0.35em) rotate(-45deg);
+}
+.tower.team-radiant.lane-mid.tier-4 {
+  bottom: 15.8%;
+  left: 10.2%;
+}
+.tower.team-radiant.lane-mid.tier-4 + .tier-4 {
+  transform: translate(0.45em, 0.35em);
+}
+
+.tower.team-radiant {
+  background-position: 19%;
+}
+.tower.team-radiant.lane-off.tier-1 {
+  bottom: 59%;
+  left: 9.4%;
+}
+.tower.team-radiant.lane-off.tier-2 {
+  bottom: 43%;
+  left: 9%;
+}
+.tower.team-radiant.lane-off.tier-3 {
+  bottom: 26.8%;
+  left: 6.7%;
+}
+.tower.team-radiant.lane-off.tier-rack {
+  bottom: 24.4%;
+  left: 6%;
+}
+.tower.team-radiant.lane-off.tier-rack + .tier-rack {
+  transform: translateX(0.5em);
+}
+
+.tower.team-radiant.lane-safe.tier-1 {
+  bottom: 12%;
+  left: 78%;
+}
+.tower.team-radiant.lane-safe.tier-2 {
+  bottom: 10.5%;
+  left: 46%;
+}
+.tower.team-radiant.lane-safe.tier-3 {
+  bottom: 10.5%;
+  left: 23.6%;
+}
+.tower.team-radiant.lane-safe.tier-rack {
+  bottom: 12%;
+  left: 21.7%;
+}
+.tower.team-radiant.lane-safe.tier-rack + .tier-rack {
+  transform: translateY(0.5em);
+}
+
+.tower.team-radiant.tier-rack {
+  background-position: 396%;
+}
+
+/* Dire Tower */
+.tower.team-dire.lane-mid {
+  background-position: 100%;
+}
+.tower.team-dire.lane-mid.tier-1 {
+  top: 40.8%;
+  right: 42.5%;
+}
+.tower.team-dire.lane-mid.tier-2 {
+  top: 32.4%;
+  right: 31.1%;
+}
+.tower.team-dire.lane-mid.tier-3 {
+  top: 24.2%;
+  right: 20.7%;
+}
+.tower.team-dire.lane-mid.tier-rack {
+  top: 23%;
+  right: 18.8%;
+  transform: rotate(45deg);
+}
+.tower.team-dire.lane-mid.tier-rack + .tier-rack {
+  transform: translate(-0.35em, -0.35em) rotate(45deg);
+}
+.tower.team-dire.lane-mid.tier-4 {
+  top: 17.2%;
+  right: 10.8%;
+}
+.tower.team-dire.lane-mid.tier-4 + .tier-4 {
+  transform: translate(-0.45em, -0.35em);
+}
+
+.tower.team-dire {
+  background-position: 2%;
+}
+.tower.team-dire.lane-off.tier-1 {
+  top: 58.7%;
+  right: 9%;
+}
+.tower.team-dire.lane-off.tier-2 {
+  top: 42.7%;
+  right: 8.6%;
+}
+.tower.team-dire.lane-off.tier-3 {
+  top: 28.4%;
+  right: 7.2%;
+}
+.tower.team-dire.lane-off.tier-rack {
+  top: 25.8%;
+  right: 7.6%;
+}
+.tower.team-dire.lane-off.tier-rack + .tier-rack {
+  transform: translateX(-0.5em);
+}
+
+.tower.team-dire.lane-safe.tier-1 {
+  top: 10.3%;
+  right: 76.8%;
+}
+.tower.team-dire.lane-safe.tier-2 {
+  top: 10%;
+  right: 47.5%;
+}
+.tower.team-dire.lane-safe.tier-3 {
+  top: 10.8%;
+  right: 23.8%;
+}
+.tower.team-dire.lane-safe.tier-rack {
+  top: 12.4%;
+  right: 22.8%;
+}
+.tower.team-dire.lane-safe.tier-rack + .tier-rack {
+  transform: translateY(-0.5em);
+}
+
+.tower.team-dire.tier-rack {
+  background-position: 56%;
+}

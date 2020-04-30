@@ -1,4 +1,4 @@
-import heroes from '../../json/hero'
+import { getHeroImage, getHeroName } from '../../helpers'
 
 const BanPick = ({ picks_bans, radiant_team, dire_team }) => {
   const radiant = { bans: [], picks: [], ...radiant_team }
@@ -6,16 +6,15 @@ const BanPick = ({ picks_bans, radiant_team, dire_team }) => {
 
   picks_bans.map((phase, key) => {
     const team = phase.team ? dire : radiant
-    const hero = heroes[phase.hero_id]
     team[phase.is_pick ? 'picks' : 'bans'].push(
       <span
         className='relative block w-16 mx-1 overflow-hidden border border-transparent rounded hero hover:border-red'
         key={key}
       >
         <img
-          src={`/assets/images/heroes/${hero.replace(' ', '_').replace("'", '')}_icon.png`}
-          alt={hero}
-          title={hero}
+          src={getHeroImage(phase.hero_id)}
+          alt={getHeroName(phase.hero_id)}
+          title={getHeroName(phase.hero_id)}
         />
         <span className='absolute bottom-0 right-0 px-1 text-xs bg-black ord'>{phase.ord + 1}</span>
       </span>
@@ -26,7 +25,7 @@ const BanPick = ({ picks_bans, radiant_team, dire_team }) => {
     <div className='match-banpick'>
       <div className='flex items-end justify-center'>
         <div className='w-40 pr-4'>
-          <img src={radiant.logo_url} alt={radiant.name} className='w-full' />
+          <img src={radiant.logo_url} alt={radiant.name} title={radiant.name} className='w-full' />
         </div>
         <div>
           <div className='flex items-center justify-center mb-2 bans'>
@@ -45,7 +44,7 @@ const BanPick = ({ picks_bans, radiant_team, dire_team }) => {
           </div>
         </div>
         <div className='w-40 pl-4'>
-          <img src={dire.logo_url} alt={dire.name} className='w-full' />
+          <img src={dire.logo_url} alt={dire.name} title={dire.name} className='w-full' />
         </div>
       </div>
     </div>

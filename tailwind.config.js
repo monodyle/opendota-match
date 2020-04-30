@@ -11,6 +11,7 @@ module.exports = {
       dirtysnow: '#E5E9F2',
       carbon: '#C0CCDA',
       smoke: '#8492A6',
+      'mid-gray': '#535f73',
       granite: '#3C4758',
 
       // color

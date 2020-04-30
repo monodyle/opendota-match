@@ -32,7 +32,7 @@ const Items = ({ items, xclass }) => {
   )
 }
 
-const Player = ({ data }) => {
+const Player = ({ data, team_tag }) => {
   const {
     account_id,
     backpack_0,
@@ -70,6 +70,7 @@ const Player = ({ data }) => {
             href={`https://www.dotabuff.com/players/${account_id}`}
             title={name || personaname}
           >
+            {team_tag && <strong className='font-bold text-mid-gray'>{team_tag + '.'}</strong>}
             {name || personaname}
           </a>
         </div>
