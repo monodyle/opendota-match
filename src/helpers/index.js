@@ -10,6 +10,13 @@ const getHeroImage = hero_id => {
     .replace(/\'/g, '')}_icon.png`
 }
 
+const getHeroIcon = hero_id => {
+  if (!getHeroName(hero_id)) return
+  return `/assets/icons/heroes/${getHeroName(hero_id)
+    .replace(/\s/g, '_')
+    .replace(/\'/g, '')}_minimap_icon.png`
+}
+
 const getItemName = item_id => (items[item_id] ? items[item_id].localized_name : null)
 
 const getItemImage = item_id => {
@@ -20,4 +27,4 @@ const getItemImage = item_id => {
   return `/assets/images/items/${item_name}.png`
 }
 
-export { getHeroName, getHeroImage, getItemName, getItemImage }
+export { getHeroName, getHeroImage, getHeroIcon, getItemName, getItemImage }
