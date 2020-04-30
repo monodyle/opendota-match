@@ -14,10 +14,7 @@ const Home = ({ match_data }) => {
   return (
     <>
       <Nav />
-      <main
-        className='container relative mt-8 mb-32'
-        style={{ minHeight: '40vh' }}
-      >
+      <main className='container relative mt-8 mb-32' style={{ minHeight: '40vh' }}>
         <Match data={match_data} />
         <div className='relative mt-10 transform -translate-x-1/2 left-1/2'>
           <div className='container flex items-center justify-center'>
