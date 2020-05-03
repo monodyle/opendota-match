@@ -10,7 +10,7 @@ const Minimap = ({ players }) => {
     <div
       className='relative w-64 h-64 overflow-hidden bg-center bg-cover minimap'
       style={{
-        backgroundImage: 'url(/assets/images/map.png)',
+        backgroundImage: 'url("/assets/images/map.png")',
       }}
     >
       {['radiant', 'dire'].map((team, k) => (
@@ -29,7 +29,7 @@ const Minimap = ({ players }) => {
           key={k}
           className={`absolute block bg-center bg-no-repeat bg-contain lane-${p.lane} role-${
             p.lane_role
-          } team-${p.isRadiant ? 'radiant' : 'dire'} minimap-icon`}
+          } team-${p.isRadiant ? 'radiant' : 'dire'} minimap-icon z-20`}
           title={(p.name || p.personaname) + ' as ' + getHeroName(p.hero_id)}
           style={{
             backgroundImage: 'url(' + getHeroIcon(p.hero_id) + ')',

@@ -25,7 +25,14 @@ const BanPick = ({ picks_bans, radiant_team, dire_team }) => {
     <div className='match-banpick'>
       <div className='flex items-end justify-center'>
         <div className='w-40 pr-4'>
-          <img src={radiant.logo_url} alt={radiant.name} title={radiant.name} className='w-full' />
+          {radiant.logo_url && (
+            <img
+              src={radiant.logo_url}
+              alt={radiant.name}
+              title={radiant.name}
+              className='w-full'
+            />
+          )}
         </div>
         <div>
           <div className='flex items-center justify-center mb-2 bans'>
@@ -44,7 +51,9 @@ const BanPick = ({ picks_bans, radiant_team, dire_team }) => {
           </div>
         </div>
         <div className='w-40 pl-4'>
-          <img src={dire.logo_url} alt={dire.name} title={dire.name} className='w-full' />
+          {dire.logo_url && (
+            <img src={dire.logo_url} alt={dire.name} title={dire.name} className='w-full' />
+          )}
         </div>
       </div>
     </div>

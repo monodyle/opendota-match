@@ -4,6 +4,7 @@ import Teams from './partials/teams'
 import Statistics from './partials/statistics'
 
 const Match = ({ data }) => {
+  const raw = data ? JSON.parse(data) : {}
   const {
     match_id,
     barracks_status_dire,
@@ -49,32 +50,36 @@ const Match = ({ data }) => {
     my_word_counts,
     loss,
     replay_url,
-  } = JSON.parse(data)
+  } = raw
 
   return (
-    <div className='container px-6 pt-6 pb-10'>
-      <MatchInfo
-        radiant_name={radiant_team.name}
-        dire_name={dire_team.name}
-        radiant_score={radiant_score}
-        dire_score={dire_score}
-        game_mode={game_mode}
-        duration={duration}
-        radiant_win={radiant_win}
-      />
-      <div className='h-10'></div>
-      <BanPick picks_bans={picks_bans} radiant_team={radiant_team} dire_team={dire_team} />
-      <div className='h-10'></div>
-      <Statistics
-        players={players}
-        radiant_gold_adv={radiant_gold_adv}
-        radiant_xp_adv={radiant_xp_adv}
-        radiant_team={radiant_team}
-        dire_team={dire_team}
-      />
-      <div className='h-10'></div>
-      <Teams players={players} radiant_tag={radiant_team.tag} dire_tag={dire_team.tag} />
-    </div>
+    <>
+      {match_id && (
+        <div className='container px-6 pt-6 pb-10'>
+          <MatchInfo
+            radiant_name={radiant_team.name}
+            dire_name={dire_team.name}
+            radiant_score={radiant_score}
+            dire_score={dire_score}
+            game_mode={game_mode}
+            duration={duration}
+            radiant_win={radiant_win}
+          />
+          <div className='h-10'></div>
+          <BanPick picks_bans={picks_bans} radiant_team={radiant_team} dire_team={dire_team} />
+          <div className='h-10'></div>
+          <Statistics
+            players={players}
+            radiant_gold_adv={radiant_gold_adv}
+            radiant_xp_adv={radiant_xp_adv}
+            radiant_team={radiant_team}
+            dire_team={dire_team}
+          />
+          <div className='h-10'></div>
+          <Teams players={players} radiant_tag={radiant_team.tag} dire_tag={dire_team.tag} />
+        </div>
+      )}
+    </>
   )
 }
 
